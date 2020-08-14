@@ -66,4 +66,7 @@ one of the following options.
 </html>
 ```
 
-4. Compile your assets. This is really your choice, choose whatever option you are comfortable with. (maybe I should add sample project for Vue and React).
+4. Compile your assets. This is really your choice, choose whatever option you are comfortable with. (maybe I should add sample project for Vue).
+
+# Examples
+* [React](https://github.com/imrandyk/inertia-aspnetcore-react-example)
