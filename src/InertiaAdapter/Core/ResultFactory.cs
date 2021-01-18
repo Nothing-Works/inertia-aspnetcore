@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Web;
 using InertiaAdapter.Interfaces;
 using InertiaAdapter.Models;
 using Microsoft.AspNetCore.Html;
@@ -40,10 +41,13 @@ namespace InertiaAdapter.Core
 
         public IHtmlContent Html(dynamic model)
         {
-            var data = JsonSerializer.Serialize(model,
+            string data = JsonSerializer.Serialize(model,
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
-            return new HtmlString($"<div id=\"app\" data-page={data}></div>");
+            data = HttpUtility.HtmlEncode(data);
+
+
+            return new HtmlString($"<div id=\"app\" data-page=\"{data}\"></div>");
         }
 
         public IActionResult Render(string component, object controller) =>
