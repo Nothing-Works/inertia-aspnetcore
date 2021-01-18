@@ -1,6 +1,6 @@
-﻿using InertiaAdapter.Core;
 using System.Collections.Generic;
 using System.Web;
+using InertiaAdapter.Core;
 using Xunit;
 
 namespace Tests.Feature
@@ -9,8 +9,15 @@ namespace Tests.Feature
     {
         public static IEnumerable<object[]> GetData()
         {
-            yield return new object[] { new { Id = 1,  }, $"<div id=\"app\" data-page=\"{HttpUtility.HtmlEncode("{\"id\":1}")}\"></div>" };
-            yield return new object[] { new { Id = "Andy" }, $"<div id=\"app\" data-page=\"{HttpUtility.HtmlEncode("{\"id\":\"Andy\"}")}\"></div>" };
+            yield return new object[]
+            {
+                new { Id = 1 }, $"<div id=\"app\" data-page=\"{HttpUtility.HtmlEncode("{\"id\":1}")}\"></div>"
+            };
+            yield return new object[]
+            {
+                new { Id = "Andy" },
+                $"<div id=\"app\" data-page=\"{HttpUtility.HtmlEncode("{\"id\":\"Andy\"}")}\"></div>"
+            };
         }
 
         [Theory]

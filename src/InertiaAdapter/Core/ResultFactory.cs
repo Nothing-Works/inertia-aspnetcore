@@ -41,13 +41,10 @@ namespace InertiaAdapter.Core
 
         public IHtmlContent Html(dynamic model)
         {
-            string data = JsonSerializer.Serialize(model,
+            var data = JsonSerializer.Serialize(model,
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
-            data = HttpUtility.HtmlEncode(data);
-
-
-            return new HtmlString($"<div id=\"app\" data-page=\"{data}\"></div>");
+            return new HtmlString($"<div id=\"app\" data-page=\"{HttpUtility.HtmlEncode(data)}\"></div>");
         }
 
         public IActionResult Render(string component, object controller) =>
