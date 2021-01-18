@@ -45,7 +45,7 @@ namespace InertiaAdapter.Core
             throw new KeyDoesNotExistException("The key for shared props does not exist.");
         }
 
-        public Dictionary<string, object> Value =>
+        public IDictionary<string, object> Value =>
             _stringWithObjects
                 .Concat(_stringWithDelegates
                     .ToDictionary(c => c.Key, c => c.Value()))

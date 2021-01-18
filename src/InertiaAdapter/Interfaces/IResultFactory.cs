@@ -11,7 +11,7 @@ namespace InertiaAdapter.Interfaces
 
         void Share(string key, Func<object> func);
 
-        Dictionary<string, object> GetShared();
+        IDictionary<string, object> GetShared();
 
         object GetSharedByKey(string key);
 

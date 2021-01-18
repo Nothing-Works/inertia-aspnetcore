@@ -11,7 +11,7 @@ namespace InertiaAdapter.Interfaces
 
         public void Share(string key, Func<object> func) => throw new NotImplementedException();
 
-        public Dictionary<string, object> GetShared() => throw new NotImplementedException();
+        public IDictionary<string, object> GetShared() => throw new NotImplementedException();
 
         public object GetSharedByKey(string key) => throw new NotImplementedException();
 

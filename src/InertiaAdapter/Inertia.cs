@@ -29,7 +29,7 @@ namespace InertiaAdapter
 
         public static void Share(string key, Func<object> func) => _factory.Share(key, func);
 
-        public static Dictionary<string, object> GetShared() => _factory.GetShared();
+        public static IDictionary<string, object> GetShared() => _factory.GetShared();
 
         public static object GetSharedByKey(string key) => _factory.GetSharedByKey(key);
     }
