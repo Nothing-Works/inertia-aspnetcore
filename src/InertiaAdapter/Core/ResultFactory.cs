@@ -21,7 +21,7 @@ namespace InertiaAdapter.Core
 
         public void Share(string key, Func<object> func) => _share.AddOrUpdate(key, func);
 
-        public Dictionary<string, object> GetShared() => _share.Value;
+        public IDictionary<string, object> GetShared() => _share.Value;
 
         public object GetSharedByKey(string key) => _share.GetValue(key);
 
@@ -46,6 +46,8 @@ namespace InertiaAdapter.Core
 
             return new HtmlString($"<div id=\"app\" data-page=\"{HttpUtility.HtmlEncode(data)}\"></div>");
         }
+
+        public IActionResult Location(string url) => new LocationResult(url);
 
         public IActionResult Render(string component, object controller) =>
             new Result(new Props { Controller = controller, SharedProps = _share.Value }, component, _rootView,

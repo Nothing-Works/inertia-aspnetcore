@@ -1,13 +1,13 @@
-﻿using InertiaAdapter.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using InertiaAdapter.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace InertiaAdapter.Extensions
 {

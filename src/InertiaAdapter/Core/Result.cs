@@ -50,7 +50,7 @@ namespace InertiaAdapter.Core
 
             ConstructPage();
 
-            await GetResult().ExecuteResultAsync(_context);
+            await GetResult().ExecuteResultAsync(_context.NotNull());
         }
 
         private object InvokeIfLazy(IEnumerable<string> str) =>
@@ -78,14 +78,14 @@ namespace InertiaAdapter.Core
         };
 
         private IActionResult GetResult() =>
-            IsInertiaRequest() ? (IActionResult)Json() : View();
+            IsInertiaRequest() ? Json() : View();
 
 
         private (bool, IList<string>) PartialRequest()
         {
             var only = _props.Controller.Only(PartialData());
 
-            return (ComponentName() != _component && only.Count > 0, only);
+            return (ComponentName() == _component && only.Count > 0, only);
         }
 
         private ViewDataDictionary ConstructViewData() => new ViewData(_page, _context, _viewData).ViewDataDictionary;

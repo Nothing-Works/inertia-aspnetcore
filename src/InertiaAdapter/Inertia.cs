@@ -15,6 +15,8 @@ namespace InertiaAdapter
         public static IActionResult Render(string component, object controller) =>
             _factory.Render(component, controller);
 
+        public static IActionResult Location(string url) => _factory.Location(url);
+
         public static string? GetVersion() => _factory.GetVersion();
 
         public static void SetRootView(string s) => _factory.SetRootView(s);

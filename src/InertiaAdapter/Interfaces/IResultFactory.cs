@@ -26,5 +26,7 @@ namespace InertiaAdapter.Interfaces
         IHtmlContent Html(dynamic model);
 
         IActionResult Render(string component, object controller);
+
+        IActionResult Location(string url);
     }
 }

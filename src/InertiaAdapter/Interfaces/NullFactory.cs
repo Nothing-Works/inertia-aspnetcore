@@ -26,5 +26,7 @@ namespace InertiaAdapter.Interfaces
         public IHtmlContent Html(dynamic model) => throw new NotImplementedException();
 
         public IActionResult Render(string component, object controller) => throw new NotImplementedException();
+
+        public IActionResult Location(string url) => throw new NotImplementedException();
     }
 }
