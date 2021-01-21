@@ -1,4 +1,4 @@
-# I am back!!! I will update this repo very soon!!!
+# This project is still alive! More examples are coming.
 
 # Inertia.js ASP.NET Core Adapter
 
